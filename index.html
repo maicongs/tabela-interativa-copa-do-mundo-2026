@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa do Mundo 2026 - Tabela Interativa</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="data:,">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <p class="header-eyebrow">FIFA WORLD CUP™</p>
+        <h1 class="header-title">
+            Copa do Mundo <span class="gold">2026</span>
+        </h1>
+        <p>EUA • Canadá • México &nbsp; |&nbsp; 48 seleções &nbsp; |&nbsp; 104 jogos</p>
+    </header>
+
+    <!-- NAVEGAÇÃO POR ABAS -->
+    <nav class="tabs-nav">
+        <button class="tab-btn active" data-tab="groups">Fase de Grupos</button>
+        <button class="tab-btn" data-tab="r32">Rodada de 32</button>
+        <button class="tab-btn" data-tab="r16">Oitavas</button>
+        <button class="tab-btn" data-tab="qf">Quartas</button>
+        <button class="tab-btn" data-tab="sf">Semifinais</button>
+        <button class="tab-btn" data-tab="final">Final</button>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+     <main class="main-content">
+
+        <!-- FASE DE GRUPOS -->
+        <section id="tab-groups" class="tab-content active">
+
+            <!-- Painel dos  8 melhores terceiros - Preenchido pelo JS -->
+            <div id="thirds-panel"></div>
+
+            <!-- Grade dos 12 grupos - cada div é preenchida pelo renderGroup() -->
+            <div class="groups-grid">
+                <div id="group-A"></div>
+                <div id="group-B"></div>
+                <div id="group-C"></div>
+                <div id="group-D"></div>
+                <div id="group-E"></div>
+                <div id="group-F"></div>
+                <div id="group-G"></div>
+                <div id="group-H"></div>
+                <div id="group-I"></div>
+                <div id="group-J"></div>
+                <div id="group-K"></div>
+                <div id="group-L"></div> 
+            </div>
+
+        </section>
+
+        <!-- RODADA DE 32 -->
+        <section id="tab-r32" class="tab-content">
+            <!-- preenchido pelo renderR32() -->
+        </section>
+
+        <!-- OITAVAS -->
+        <section id="tab-r16" class="tab-content">
+            <!-- preenchido pelo renderR16() -->
+        </section>
+
+        <!-- QUARTAS -->
+        <section id="tab-qf" class="tab-content">
+            <!-- preenchido pelo renderQF() -->
+        </section>
+
+        <!-- SEMIFINAIS -->
+        <section id="tab-sf" class="tab-content">
+            <!-- preenchido pelo renderSF() -->
+        </section>
+
+        <!-- FINAL -->
+        <section id="tab-final" class="tab-content">
+            <!-- preenchido pelo renderFinal() -->
+        </section>
+
+     </main>
+
+     <!-- SCRIPTS -->
+     <!--
+        A ordem importa muito aqui.
+        data.js precisa ser carregado antes de standings.js,
+        que precisa ser carregado antes de render.js,
+        que precisa ser carregado antes de main.js.
+        Isso porque cada arquivo usa variáveis/funcoes dos anteriores.
+     -->
+     <script src="js/data.js"></script>
+     <script src="js/standings.js"></script>
+     <script src="js/render.js"></script>
+     <script src="js/main.js"></script>
+    
+</body>
+</html>
