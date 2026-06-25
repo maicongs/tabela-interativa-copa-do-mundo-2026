@@ -177,10 +177,14 @@ function renderR16(slots, knockoutScores) {
 
     //Pares de R16: vencedores de jogos adjacentes do R32
     const r16Pairs = [
-        ["M73", "M74"], ["M75", "M76"],
-        ["M77", "M78"], ["M79", "M80"],
-        ["M81", "M82"], ["M83", "M84"],
-        ["M85", "M86"], ["M87", "M88"],
+        ["M73", "M75"], 
+        ["M74", "M77"], 
+        ["M83", "M84"],
+        ["M81", "M82"],
+        ["M76", "M78"], 
+        ["M79", "M80"], 
+        ["M86", "M88"],
+        ["M85", "M87"],
     ];
 
     let html = `
@@ -297,8 +301,8 @@ function getWinnerFromPrevious(phase, index, slots, knockoutScores) {
 
     if (phase === "r16") {
         const r16Pairs = [
-            ["M73", "M74"], ["M75", "M76"], ["M77", "M78"], ["M79", "M80"],
-            ["M81", "M82"], ["M83", "M84"], ["M85", "M86"], ["M87", "M88"],
+            ["M73", "M75"], ["M74", "M77"], ["M83", "M84"], ["M81", "M82"],
+            ["M76", "M78"], ["M79", "M80"], ["M86", "M88"], ["M85", "M87"],
         ];
         const [idA, idB] = r16Pairs[index];
         const mA = R32_BRACKET.find(m => m.id === idA);
