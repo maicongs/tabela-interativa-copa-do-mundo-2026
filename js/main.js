@@ -128,15 +128,46 @@ function resolveKnockoutSlots(allStandings, best8thirds) {
         slots[`2${groupKey}`] = standing[1]?.name || `2º Grupo ${groupKey}`;
     });
 
-    best8thirds.forEach((third, i) => {
-        slots[`3rd-${i + 1}`] = third.name;
-    });
+    //Identifica quais grupos tiveram terceiros classificados
+    const qualifiedGroups = best8thirds.map(t => t.group).sort();
+    const key = qualifiedGroups.join("");
+
+    //Monta um mapa de terceiros por grupo de origem
+    const thirdByGroup = {};
+    best8thirds.forEach(t => { thirdByGroup[t.group] = t.name; });
+    
+    const fifaMatrix = {
+        "BDEFIJKL": ["D", "F", "E", "K", "B", "I", "J", "L"],
+    };
+
+    const assignment = fifaMatrix[key];
+
+    if (assignment) {
+        slots["3rd-ABCDF"] = thirdByGroup[assignment[0]] || `3º Grupo ${assignment[0]}`;
+        slots["3rd-CDFGH"] = thirdByGroup[assignment[1]] || `3º Grupo ${assignment[1]}`;
+        slots["3rd-CEFHI"] = thirdByGroup[assignment[2]] || `3º Grupo ${assignment[2]}`;
+        slots["3rd-EHIJK"] = thirdByGroup[assignment[3]] || `3º Grupo ${assignment[3]}`;
+        slots["3rd-BEFIJ"] = thirdByGroup[assignment[4]] || `3º Grupo ${assignment[4]}`;
+        slots["3rd-AEHIJ"] = thirdByGroup[assignment[5]] || `3º Grupo ${assignment[5]}`;
+        slots["3rd-EFGIJ"] = thirdByGroup[assignment[6]] || `3º Grupo ${assignment[6]}`;
+        slots["3rd-DEIJL"] = thirdByGroup[assignment[7]] || `3º Grupo ${assignment[7]}`;
+        
+    } else {
+        const slotKeys = [
+            "3rd-ABCDF","3rd-CDFGH","3rd-CEFHI","3rd-EHIJK",
+            "3rd-BEFIJ","3rd-AEHIJ","3rd-EFGIJ","3rd-DEIJL"
+        ];
+        slotKeys.forEach((slotKey, i) => {
+            slots[slotKey] = best8thirds[i]?.name || 'A definir';
+        });
+    }
+
 
     slots.resolve = function(slot) {
         if (this[slot]) return this[slot];
-        return slot;
+        return `A definir`;
     };
-    
+
     return slots;
 }
 

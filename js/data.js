@@ -32,19 +32,19 @@ const GROUP_MATCH_PAIRS = {
 
 const R32_BRACKET = [
     { id: "M73", home: "2A", away: "2B"},
-    { id: "M74", home: "1E", away: "3rd"}, //3rd de a/b/c/d/f
+    { id: "M74", home: "1E", away: "3rd-ABCDF"}, 
     { id: "M75", home: "1F", away: "2C"},
     { id: "M76", home: "1C", away: "2F"},
-    { id: "M77", home: "1I", away: "3rd"}, //3rd de c/d/f/g/h
+    { id: "M77", home: "1I", away: "3rd-CDFGH"}, 
     { id: "M78", home: "2E", away: "2I"},
-    { id: "M79", home: "1A", away: "3rd"}, //3rd de c/e/f/h/i
-    { id: "M80", home: "1L", away: "3rd"}, //3rd de e/h/i/j/k
-    { id: "M81", home: "1D", away: "3rd"}, //3rd de b/e/f/i/j
-    { id: "M82", home: "1G", away: "3rd"}, //3rd de a/e/h/i/j
+    { id: "M79", home: "1A", away: "3rd-CEFHI"},
+    { id: "M80", home: "1L", away: "3rd-EHIJK"},
+    { id: "M81", home: "1D", away: "3rd-BEFIJ"},
+    { id: "M82", home: "1G", away: "3rd-AEHIJ"},
     { id: "M83", home: "2K", away: "2L"}, 
     { id: "M84", home: "1H", away: "2J"},
-    { id: "M85", home: "1B", away: "3rd"}, //3rd de e/f/g/i/j
+    { id: "M85", home: "1B", away: "3rd-EFGIJ"},
     { id: "M86", home: "1J", away: "2H"},
-    { id: "M87", home: "1K", away: "3rd"}, //3rd de d/e/i/j/l
+    { id: "M87", home: "1K", away: "3rd-DEIJL"},
     { id: "M88", home: "2D", away: "2G"},
 ];  
